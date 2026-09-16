@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#7c3aed" />
+
+    <title>A/B Test Significance Calculator — two-proportion z-test</title>
+    <meta
+      name="description"
+      content="Run a two-proportion z-test to check whether your A/B test's variant lift is statistically significant or just noise, from visitor and conversion counts. Free, private, runs entirely in your browser."
+    />
+    <link rel="canonical" href="https://ab-test-calculator.correia95.workers.dev/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="A/B Test Significance Calculator" />
+    <meta property="og:description" content="Is your variant's lift real, or just noise? Two-proportion z-test. Free, in your browser." />
+    <meta property="og:url" content="https://ab-test-calculator.correia95.workers.dev/" />
+    <meta property="og:image" content="https://ab-test-calculator.correia95.workers.dev/og.svg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="A/B Test Significance Calculator" />
+    <meta name="twitter:description" content="Is your variant's lift real, or just noise? Two-proportion z-test. Free, in your browser." />
+    <meta name="twitter:image" content="https://ab-test-calculator.correia95.workers.dev/og.svg" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "A/B Test Significance Calculator",
+        "url": "https://ab-test-calculator.correia95.workers.dev/",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "description": "Runs a two-proportion z-test on control and variant visitor/conversion counts, computing conversion rates, relative uplift, z-score, p-value, and statistical significance against a chosen threshold."
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What significance level should I use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Alpha = 0.05 is a common default, but 0.01 is more conservative for high-stakes decisions, and 0.10 is sometimes used for quick, lower-stakes experiments."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "My result isn't significant - does that mean the variant doesn't work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Not necessarily - it may mean you don't have enough data yet to detect a real but smaller effect. Consider running the test longer rather than concluding there's no effect."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does this account for multiple testing or peeking at results early?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No - this is a single, one-time significance test. Checking results repeatedly as data comes in inflates your real false-positive rate beyond the stated alpha."
+            }
+          }
+        ]
+      }
+    </script>
+    <style>
+      .tt-nav { box-sizing: border-box; width: 100%; margin: 0; background: #f1f1f4; border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+      .tt-nav a { display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; text-decoration: none; color: #3730a3; font: 600 13px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+      .tt-nav a:hover { color: #1e1b4b; text-decoration: underline; }
+      .tt-nav svg { width: 14px; height: 14px; flex: none; }
+      @media (prefers-color-scheme: dark) {
+        .tt-nav { background: #15151b; border-bottom-color: rgba(255, 255, 255, 0.12); }
+        .tt-nav a { color: #c7d2fe; }
+        .tt-nav a:hover { color: #e0e7ff; }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="tt-nav"><a href="https://tinytools.correia95.workers.dev/" aria-label="TinyTools home — all tools and games"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 2 11h3v9h5v-6h4v6h5v-9h3z"/></svg><span>TinyTools</span></a></nav>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <noscript>
+      <p style="text-align: center; padding: 20px">
+        This calculator needs JavaScript to run in your browser.
+      </p>
+    </noscript>
+  </body>
+</html>

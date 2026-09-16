@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ab-test-calculator.correia95.workers.dev/sitemap.xml
