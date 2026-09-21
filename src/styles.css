@@ -84,3 +84,8 @@ h1 { font-size: clamp(1.4rem, 4.2vw, 1.9rem); margin: 0 0 6px; letter-spacing: -
   .field-grid { grid-template-columns: 1fr; }
   .result-row > div { min-width: 130px; }
 }
+
+/* a11y-contrast-fixes (auto, WCAG AA 4.5:1) */
+@media (prefers-color-scheme: light) {
+  .preset-buttons button.active { color: #ffffff; }
+}
